@@ -161,20 +161,84 @@ footer{
   to{opacity:1;transform:none}
 }
 </style>
+  /* TOP NAV WITH BRAND */
+.top-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 30px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+/* BRAND */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  height:48px;
+}
+
+.brand-name{
+  font-size:34px;          /* বড় লেখা */
+  font-weight:800;
+  color:#0b3c74;
+  animation:slideFade 1s ease forwards;
+  opacity:0;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:20px;
+}
+.menu a{
+  text-decoration:none;
+  color:#0b3c74;
+  font-weight:600;
+}
+.menu a:hover{
+  color:#d40000;
+}
+
+/* BRAND ANIMATION */
+@keyframes slideFade{
+  from{
+    opacity:0;
+    transform:translateX(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
 </head>
 
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#services">Services</a>
-  <a href="#why">Why Us</a>
-  <a href="#faq">FAQ</a>
-  <a href="#support">Support</a>
-  <a href="#payment">Payment</a>
-  <a href="#query">Query</a>
-  <a href="#contact">Contact</a>
+<nav class="top-nav">
+  <div class="brand">
+    <img src="logopng.png" alt="Web Gallery Logo">
+    <span class="brand-name">Web Gallery</span>
+  </div>
+
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#support">Support</a>
+    <a href="#payment">Payment</a>
+    <a href="#query">Query</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <header id="home">
