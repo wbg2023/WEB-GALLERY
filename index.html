@@ -7,15 +7,16 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
-body{background:#f5f7fb;color:#222}
+body{background:#f5f7fb;color:#222;line-height:1.6}
+html{scroll-behavior:smooth}
 
-/* ===== NAV ===== */
+/* NAV */
 nav{
   position:sticky;top:0;z-index:100;
   background:#fff;
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:22px;
   padding:14px;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
@@ -26,17 +27,16 @@ nav a{
 }
 nav a:hover{color:#d40000}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   padding:50px 30px;
   text-align:center;
-  animation:fadeUp .9s ease;
 }
 header img{height:60px;margin-bottom:10px}
 header h1{color:#0b3c74;font-size:36px}
 header p{color:#555}
 
-/* ===== SECTION ===== */
+/* SECTION */
 section{
   padding:60px 30px;
   animation:fadeUp .8s ease;
@@ -44,7 +44,7 @@ section{
 h2{color:#0b3c74;margin-bottom:10px}
 .price{color:#d40000;font-weight:700;margin-bottom:20px}
 
-/* ===== GRID ===== */
+/* SERVICE GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -61,7 +61,7 @@ h2{color:#0b3c74;margin-bottom:10px}
 .card:hover{transform:translateY(-6px)}
 .card img{width:100%;display:block}
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -75,7 +75,7 @@ h2{color:#0b3c74;margin-bottom:10px}
 }
 .gallery img:hover{transform:scale(1.05)}
 
-/* ===== WHY ===== */
+/* WHY */
 .why{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -88,7 +88,17 @@ h2{color:#0b3c74;margin-bottom:10px}
   box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-/* ===== QUERY ===== */
+/* TEXT BLOCK */
+.block{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+.block ul{padding-left:20px}
+.block li{margin-bottom:8px}
+
+/* QUERY */
 .query{
   background:#fff;
   padding:30px;
@@ -107,7 +117,7 @@ h2{color:#0b3c74;margin-bottom:10px}
   font-weight:700;
 }
 
-/* ===== MODAL ===== */
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -123,7 +133,6 @@ h2{color:#0b3c74;margin-bottom:10px}
   max-width:420px;
   width:90%;
   border-radius:14px;
-  animation:zoom .3s ease;
 }
 .modal img{width:100%;border-radius:10px}
 .modal button{
@@ -138,7 +147,7 @@ h2{color:#0b3c74;margin-bottom:10px}
 .luxury{background:#d40000;color:#fff}
 .close{background:#ccc}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   background:#0b3c74;
   color:#fff;
@@ -146,14 +155,10 @@ footer{
   padding:15px;
 }
 
-/* ===== ANIMATION ===== */
+/* ANIMATION */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:none}
-}
-@keyframes zoom{
-  from{transform:scale(.8);opacity:0}
-  to{transform:scale(1);opacity:1}
 }
 </style>
 </head>
@@ -165,6 +170,9 @@ footer{
   <a href="#gallery">Gallery</a>
   <a href="#services">Services</a>
   <a href="#why">Why Us</a>
+  <a href="#faq">FAQ</a>
+  <a href="#support">Support</a>
+  <a href="#payment">Payment</a>
   <a href="#query">Query</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -175,16 +183,65 @@ footer{
   <p>Design • Branding • Creativity</p>
 </header>
 
-<!-- ===== GALLERY (ALL IMAGES) ===== -->
+<!-- HOME SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+
+<h3>Photo Frame</h3>
+<p class="price">Normal ₹499 | Luxury ₹999</p>
+<div class="grid">
+  <div class="card" onclick="openModal('frame1.png')"><img src="frame1.png"></div>
+  <div class="card" onclick="openModal('frame2.png')"><img src="frame2.png"></div>
+</div>
+
+<h3>Coffee Mug</h3>
+<p class="price">Normal ₹349 | Luxury ₹699</p>
+<div class="grid">
+  <div class="card" onclick="openModal('mug1.png')"><img src="mug1.png"></div>
+  <div class="card" onclick="openModal('mug2.png')"><img src="mug2.png"></div>
+</div>
+
+<h3>Logo Design</h3>
+<p class="price">Normal ₹499 | Luxury ₹1999</p>
+<div class="grid">
+  <div class="card" onclick="openModal('logo1.jpg')"><img src="logo1.jpg"></div>
+  <div class="card" onclick="openModal('logo2.jpg')"><img src="logo2.jpg"></div>
+</div>
+
+<h3>Flyer</h3>
+<p class="price">Normal ₹399 | Luxury ₹1499</p>
+<div class="grid">
+  <div class="card" onclick="openModal('fl1.jpg')"><img src="fl1.jpg"></div>
+  <div class="card" onclick="openModal('fl2.jpg')"><img src="fl2.jpg"></div>
+</div>
+
+<h3>Brochure</h3>
+<p class="price">Normal ₹599 | Luxury ₹1999</p>
+<div class="grid">
+  <div class="card" onclick="openModal('brochure1.jpg')"><img src="brochure1.jpg"></div>
+</div>
+
+<h3>Product Advertisement</h3>
+<p class="price">Normal ₹499 | Luxury ₹1999</p>
+<div class="grid">
+  <div class="card" onclick="openModal('pp1.jpg')"><img src="pp1.jpg"></div>
+</div>
+
+<h3>Business Card</h3>
+<p class="price">Normal ₹399 | Luxury ₹999</p>
+<div class="grid">
+  <div class="card" onclick="openModal('bc1.jpg')"><img src="bc1.jpg"></div>
+</div>
+
+</section>
+
+<!-- GALLERY -->
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
   <img src="frame1.png" onclick="openModal(this.src)">
-  <img src="frame2.png" onclick="openModal(this.src)">
   <img src="mug1.png" onclick="openModal(this.src)">
-  <img src="mug2.png" onclick="openModal(this.src)">
   <img src="logo1.jpg" onclick="openModal(this.src)">
-  <img src="logo2.jpg" onclick="openModal(this.src)">
   <img src="fl1.jpg" onclick="openModal(this.src)">
   <img src="brochure1.jpg" onclick="openModal(this.src)">
   <img src="pp1.jpg" onclick="openModal(this.src)">
@@ -192,29 +249,57 @@ footer{
 </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services">
-<h2>Our Services</h2>
-<div class="grid">
-  <div class="card"><img src="frame1.png"></div>
-  <div class="card"><img src="mug1.png"></div>
-  <div class="card"><img src="logo1.jpg"></div>
-  <div class="card"><img src="pp1.jpg"></div>
-</div>
-</section>
-
-<!-- ===== WHY US ===== -->
+<!-- WHY US -->
 <section id="why">
 <h2>Why Choose Us</h2>
 <div class="why">
-  <div>100% Custom Design</div>
-  <div>Normal & Luxury Packages</div>
-  <div>Affordable Pricing</div>
-  <div>WhatsApp Support</div>
+  <div>100% Custom Design – No Templates</div>
+  <div>Normal & Luxury Options Available</div>
+  <div>Trusted by Small Businesses & Creators</div>
+  <div>Full Support Till Final Approval</div>
 </div>
 </section>
 
-<!-- ===== QUERY ===== -->
+<!-- FAQ -->
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="block">
+<ul>
+<li>How to place an order?</li>
+<li>What is the difference between Normal & Luxury?</li>
+<li>How long does delivery take?</li>
+<li>How can I send photos or content?</li>
+<li>Is revision available?</li>
+</ul>
+</div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support">
+<h2>Support</h2>
+<div class="block">
+<ul>
+<li>WhatsApp chat support available</li>
+<li>Direct chat with designer</li>
+<li>Get price & sample before order</li>
+</ul>
+</div>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment">
+<h2>Payment Information</h2>
+<div class="block">
+<ul>
+<li>Advance payment required</li>
+<li>UPI / GPay / PhonePe accepted</li>
+<li>Partial payment available</li>
+<li>Invoice on request</li>
+</ul>
+</div>
+</section>
+
+<!-- QUERY -->
 <section id="query">
 <h2>Have Any Query?</h2>
 <div class="query">
@@ -223,11 +308,11 @@ footer{
     📞 +91 83919 79133<br>
     ✉️ wbg.2023@gmail.com
   </div>
-  <a href="https://wa.me/918391979133" target="_blank">Ask on WhatsApp</a>
+  <a href="https://wa.me/918391979133">Ask on WhatsApp</a>
 </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <p style="text-align:center;">
@@ -241,7 +326,7 @@ footer{
 © 2026 Web Gallery | All Rights Reserved
 </footer>
 
-<!-- ===== MODAL ===== -->
+<!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-content">
     <img id="modalImg">
@@ -253,11 +338,11 @@ footer{
 
 <script>
 function openModal(src){
-  document.getElementById("modalImg").src=src;
-  document.getElementById("modal").style.display="flex";
+  document.getElementById("modalImg").src = src;
+  document.getElementById("modal").style.display = "flex";
 }
 function closeModal(){
-  document.getElementById("modal").style.display="none";
+  document.getElementById("modal").style.display = "none";
 }
 </script>
 
