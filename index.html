@@ -2,132 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Web Gallery | Design & Branding Studio</title>
+<title>Web Gallery | Design • Branding • Creativity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f6f8fc;color:#222}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI,Arial}
+body{background:#f5f7fb;color:#222;line-height:1.6}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:#fff;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
-  position:sticky;top:0;z-index:1000;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:10;
 }
-.nav{
-  max-width:1200px;margin:auto;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 20px;
-}
-.logo{display:flex;gap:10px;align-items:center}
-.logo img{height:40px}
-.logo h1{font-size:30px;color:#0b3c78}
-.logo span{font-size:13px;color:#555}
-.menu a{
-  margin-left:16px;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-}
-.menu a:hover{color:#0b3c78}
-.wa{
-  background:#25D366;
-  color:#fff !important;
-  padding:8px 14px;
-  border-radius:20px;
-}
+header img{height:50px}
+header h1{color:#0b3c74;font-size:32px}
+header p{color:#666;font-size:14px}
 
-/* ===== SECTION COMMON ===== */
-section{
-  max-width:1200px;
-  margin:70px auto;
-  padding:0 20px;
-}
-.title{
-  font-size:32px;
-  color:#0b3c78;
-  margin-bottom:10px;
-  animation:slide 1s ease;
-}
-@keyframes slide{
-  from{opacity:0;transform:translateX(-40px)}
-  to{opacity:1;transform:translateX(0)}
-}
-.price{color:#d62828;font-weight:bold;margin-bottom:10px}
+/* SECTION */
+section{padding:60px 40px;animation:fadeUp .8s ease}
+h2{color:#0b3c74;margin-bottom:10px}
+.price{color:#d40000;font-weight:700;margin-bottom:20px}
 
-/* ===== GALLERY ===== */
-.gallery{
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
 }
 .card{
   background:#fff;
-  border-radius:15px;
+  border-radius:14px;
   overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  cursor:pointer;
   transition:.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 .card:hover{transform:translateY(-6px)}
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-}
-.card .info{
-  padding:15px;
-}
-.badge{
-  display:inline-block;
-  background:#0b3c78;
-  color:#fff;
-  padding:4px 10px;
-  border-radius:12px;
-  font-size:12px;
-  margin-right:5px;
-}
+.card img{width:100%;display:block}
 
-/* ===== WHY ===== */
-.boxes{
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  align-items:center;
+  justify-content:center;
+  z-index:20;
+}
+.modal-content{
+  background:#fff;
+  padding:20px;
+  max-width:420px;
+  width:90%;
+  border-radius:14px;
+  animation:zoom .3s ease;
+}
+.modal img{width:100%;border-radius:10px}
+.modal h3{margin:15px 0}
+.option{
+  display:flex;
+  gap:15px;
+  margin:15px 0;
+}
+.option button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+.normal{background:#0b3c74;color:#fff}
+.luxury{background:#d40000;color:#fff}
+.close{background:#ccc;color:#000;margin-top:10px;width:100%}
+
+/* WHY */
+.why{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:20px;
 }
-.box{
+.why div{
   background:#fff;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-/* ===== QUERY ===== */
+/* QUERY */
 .query{
   background:#fff;
-  border-radius:20px;
-  padding:40px;
+  padding:30px;
+  border-radius:14px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px;
-  box-shadow:0 15px 30px rgba(0,0,0,.1);
+  gap:20px;
 }
 .query a{
-  display:inline-block;
-  margin-top:10px;
-  background:#25D366;
+  background:#25d366;
   color:#fff;
-  padding:12px 20px;
-  border-radius:30px;
+  padding:12px;
+  text-align:center;
+  border-radius:8px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:700;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
-  background:#0b3c78;
+  background:#0b3c74;
   color:#fff;
   text-align:center;
-  padding:20px;
+  padding:15px;
+  margin-top:40px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+@keyframes zoom{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 </style>
 </head>
@@ -135,90 +140,191 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">
-      <img src="logopng.png">
-      <div>
-        <h1>Web Gallery</h1>
-        <span>Design • Branding • Creativity</span>
-      </div>
-    </div>
-    <div class="menu">
-      <a href="#">Home</a>
-      <a href="#frame">Photo Frame</a>
-      <a href="#mug">Coffee Mug</a>
-      <a href="#logo">Logo</a>
-      <a href="#query">Query</a>
-      <a class="wa" href="https://wa.me/918391979133">WhatsApp Order</a>
-    </div>
+  <img src="logopng.png" alt="Web Gallery">
+  <div>
+    <h1>Web Gallery</h1>
+    <p>Design • Branding • Creativity</p>
   </div>
 </header>
 
-<!-- PHOTO FRAME -->
-<section id="frame">
-  <h2 class="title">Photo Frame Designs</h2>
-  <p class="price">Normal ₹499 | Luxury ₹999</p>
-  <div class="gallery">
-    <div class="card"><img src="frame1.png"><div class="info"><span class="badge">Normal</span></div></div>
-    <div class="card"><img src="frame2.png"><div class="info"><span class="badge">Luxury</span></div></div>
-    <div class="card"><img src="frame3.jpeg"></div>
-    <div class="card"><img src="frame4.jpeg"></div>
-  </div>
-</section>
-
-<!-- COFFEE MUG -->
-<section id="mug">
-  <h2 class="title">Custom Coffee Mug</h2>
-  <p class="price">Normal ₹349 | Luxury ₹699</p>
-  <div class="gallery">
-    <div class="card"><img src="mug1.png"></div>
-    <div class="card"><img src="mug2.png"></div>
-    <div class="card"><img src="mug3.png"></div>
-    <div class="card"><img src="mug4.png"></div>
-  </div>
-</section>
-
-<!-- LOGO -->
-<section id="logo">
-  <h2 class="title">Logo Design</h2>
-  <p class="price">Normal ₹499 | Luxury ₹1499</p>
-  <div class="gallery">
-    <div class="card"><img src="logo1.jpg"></div>
-    <div class="card"><img src="logo2.jpg"></div>
-    <div class="card"><img src="logo3.jpg"></div>
-  </div>
-</section>
-
-<!-- WHY -->
 <section>
-  <h2 class="title">Why Choose Us?</h2>
-  <div class="boxes">
-    <div class="box">100% Custom Design</div>
-    <div class="box">Normal & Luxury Option</div>
-    <div class="box">Affordable Pricing</div>
-    <div class="box">WhatsApp Support</div>
-  </div>
+<h2>Photo Frame Designs</h2>
+<div class="price">Normal ₹499 | Luxury ₹999</div>
+<div class="grid">
+  <div class="card" onclick="openModal('frame1.png','Photo Frame')"><img src="frame1.png"></div>
+  <div class="card" onclick="openModal('frame2.png','Photo Frame')"><img src="frame2.png"></div>
+  <div class="card" onclick="openModal('frame3.jpeg','Photo Frame')"><img src="frame3.jpeg"></div>
+  <div class="card" onclick="openModal('frame4.jpeg','Photo Frame')"><img src="frame4.jpeg"></div>
+</div>
 </section>
 
-<!-- QUERY -->
-<section id="query">
-  <div class="query">
-    <div>
-      <h2 class="title">Have Any Query?</h2>
-      <p>Design, price বা package নিয়ে confusion?</p>
-      <a href="https://wa.me/918391979133">Ask on WhatsApp</a>
-    </div>
-    <div>
-      <p>📍 Jangipur, Murshidabad, West Bengal, India- 742213</p>
-      <p>📞 +91 83919 79133</p>
-      <p>📧 wbg.2023@gmail.com</p>
-    </div>
+<section>
+<h2>Custom Coffee Mug</h2>
+<div class="price">Normal ₹349 | Luxury ₹699</div>
+<div class="grid">
+  <div class="card" onclick="openModal('mug1.png','Coffee Mug')"><img src="mug1.png"></div>
+  <div class="card" onclick="openModal('mug2.png','Coffee Mug')"><img src="mug2.png"></div>
+  <div class="card" onclick="openModal('mug3.png','Coffee Mug')"><img src="mug3.png"></div>
+  <div class="card" onclick="openModal('mug4.png','Coffee Mug')"><img src="mug4.png"></div>
+</div>
+</section>
+
+<section>
+<h2>Logo Design</h2>
+<div class="price">Normal ₹499 | Luxury ₹1499</div>
+<div class="grid">
+  <div class="card" onclick="openModal('logo1.jpg','Logo Design')"><img src="logo1.jpg"></div>
+  <div class="card" onclick="openModal('logo2.jpg','Logo Design')"><img src="logo2.jpg"></div>
+  <div class="card" onclick="openModal('logo3.jpg','Logo Design')"><img src="logo3.jpg"></div>
+</div>
+</section>
+  
+  <section>
+<h2>Flyer Design</h2>
+<div class="price">Normal ₹299 | Luxury ₹999</div>
+<div class="grid">
+  <div class="card" onclick="openModal('fl1.jpg','Flyer Design')"><img src="fl1"></div>
+  <div class="card" onclick="openModal('fl2.jpg','Flyer Design')"><img src="fl2"></div>
+  <div class="card" onclick="openModal('fl3.jpg','Flyer Design')"><img src="fl3"></div>
+  <div class="card" onclick="openModal('fl4.jpg','Flyer Design')"><img src="fl4"></div>
+  <div class="card" onclick="openModal('fl5.jpg','Flyer Design')"><img src="fl5"></div>
+  <div class="card" onclick="openModal('fl6.jpg','Flyer Design')"><img src="fl6"></div>
+</div>
+</section>
+
+   <section>
+<h2>Brochure Design</h2>
+<div class="price">Normal ₹499 | Luxury ₹1499</div>
+<div class="grid">
+  <div class="card" onclick="openModal('brochure1.jpg','Brochure Design')"><img src="brochure1"></div>
+  <div class="card" onclick="openModal('brochure2.jpg','Brochure Design')"><img src="brochure2"></div>
+</div>
+</section>
+
+<section>
+<h2>Product Advertisement Design</h2>
+<div class="price">Normal ₹599 | Luxury ₹999</div>
+<div class="grid">
+  <div class="card" onclick="openModal('pp1.jpg','Product Advertisement Design')"><img src="pp1"></div>
+  <div class="card" onclick="openModal('pp2.jpg','Product Advertisement Design')"><img src="pp2"></div>
+  <div class="card" onclick="openModal('pp3.jpg','Product Advertisement Design')"><img src="pp3"></div>
+  <div class="card" onclick="openModal('pp4.jpg','Product Advertisement Design')"><img src="pp4"></div>
+  <div class="card" onclick="openModal('pp5.jpg','Product Advertisement Design')"><img src="pp5"></div>
+  <div class="card" onclick="openModal('pp6.jpg','Product Advertisement Design')"><img src="pp6"></div>
+</div>
+</section>
+
+  <section>
+<h2>Business Card Design</h2>
+<div class="price">Normal ₹399 | Luxury ₹999</div>
+<div class="grid">
+  <div class="card" onclick="openModal('bc1.jpg','Business Card Design')"><img src="bc1"></div>
+  <div class="card" onclick="openModal('bc2.jpg','Business Card Design')"><img src="bc2"></div>
+  <div class="card" onclick="openModal('bc3.jpg','Business Card Design')"><img src="bc3"></div>
+  <div class="card" onclick="openModal('bc4.jpg','Business Card Design')"><img src="bc4"></div>
+</div>
+</section>
+  
+<section>
+<h2>Why Choose Us</h2>
+<div class="why">
+  <div>100% Custom Design</div>
+  <div>Normal & Luxury Packages</div>
+  <div>Affordable Pricing</div>
+  <div>WhatsApp Support</div>
+  <div>Get Price & Sample on WhatsApp</div>
+  <div>Chat with Designer</div>
+</div>
+</section>
+  
+<section>
+<h2>FAQ (Frequently Asked Questions)</h2>
+<div class="Query">
+  <div>How to place order?</div>
+  <div>Normal vs Luxury – what is the difference?</div>
+  <div>Delivery time?</div>
+  <div>How to send photo / content?</div>
+  <div>Revision available?</div>
+</div>
+</section>
+  
+<section>
+<h2>Order Process (Step-by-Step Guide)</h2>
+<div class="Simple 4 step:">
+  <div>Choose product</div>
+  <div>Select Normal / Luxury</div>
+  <div>Send details on WhatsApp</div>
+  <div>Get design + delivery</div>
+</div>
+</section>
+
+  <section>
+<h2>Revision & Support Policy</h2>
+<div>
+  <div>Free minor revisions (Normal: 1, Luxury: 3–5)</div>
+  <div>Full support till final approval</div>
+  <div>After-delivery support available</div>
+</div>
+</section>
+  
+  <section>
+<h2>Delivery Timeline Info</h2>
+<div>
+  <div>Digital design: 24–48 hours</div>
+  <div>Printed items: 3–5 working days</div>
+  <div>Printed items: 3–5 working days</div>
+</div>
+</section>
+
+  <section>
+<h2>Payment Support Info</h2>
+<div>
+  <div>UPI / GPay / PhonePe</div>
+  <div>Advance / partial payment policy</div>
+  <div>Invoice available on request</div>
+</div>
+</section>
+  
+  
+<section>
+<h2>Have Any Query?</h2>
+<div class="query">
+  <div>
+    📍 Jangipur, Murshidabad, West Bengal, India – 742213<br>
+    📞 +91 83919 79133<br>
+    ✉️ wbg.2023@gmail.com
   </div>
+  <a href="https://wa.me/918391979133">Order on WhatsApp</a>
+</div>
 </section>
 
 <footer>
-© 2026 Web Gallery | All Rights Reserved
+© 2026 Web Gallery • Custom Designs Made With Care
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <img id="modalImg">
+    <h3 id="modalTitle"></h3>
+    <div class="option">
+      <button class="normal">Normal</button>
+      <button class="luxury">Luxury</button>
+    </div>
+    <button class="close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function openModal(img,title){
+  document.getElementById("modalImg").src=img;
+  document.getElementById("modalTitle").innerText=title;
+  document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
 
 </body>
 </html>
